@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2000's Muziek</title>
+  <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/thumbnails/008/550/648/small/vintage-78-rpm-record-transparent-png.png">
+  <style>   
+  body {
+   background-color: rgb(15, 15, 15);
+   margin: 0;
+   padding: 0;
+}
+
+ul {
+  border: 3px solid rgb(1, 49, 4);
+  border-radius: 5px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 160px;
+  background-color: #0b521f;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: rgb(197, 190, 190);
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size:large;
+}
+
+li a.active {
+  background-color: #1a181852;
+  color: rgb(0, 0, 0);
+}
+
+li a:hover:not(.active) {
+  background-color: #323131;
+  color: rgb(3, 3, 3);
+}
+
+h1,h2 {
+  font-family:fantasy;
+  color: rgb(209, 194, 194);
+  font-size:xxx-large;
+
+} 
+p:hover,h1:hover{
+  text-shadow: 0 0 10px #06cb38;
+}
+h3.center {
+  text-align: center;
+  font-family:fantasy;
+  color: rgb(92, 1, 1);
+  font-size:xx-large;
+  text-shadow: 0 0 3px #090000;
+} 
+p{font-family: fantasy;
+  color: rgb(255, 247, 247);
+  font-size: larger;
+  text-align: center;
+
+}
+li{ font-family: fantasy;
+  color: rgb(82, 8, 8);
+  font-size: larger;
+  text-indent: 30px;
+}
+li:hover {
+  text-shadow: 0 0 10px #06cb38;
+}
+h1.center {
+  text-align: center;
+  color: rgb(218, 216, 216);
+
+}
+
+body {
+  background-color: #111;
+  overflow: hidden;
+}
+
+.vinyl {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  animation: move 6s linear infinite;
+}
+
+.vinyl img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes move {
+  from { left: 200px; }
+  to { left: 1500px; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+p.one {
+ border: 2px solid rgb(6, 95, 7);
+ border-radius: 5px;
+ padding: 5px;
+ text-indent: 50px;
+ text-align: center;
+}
+p.two {
+ border: 2px solid rgb(255, 255, 255);
+ border-radius: 5px;
+ padding: 5px;
+ text-indent: 50px;
+ text-align: center;
+}
+div.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  width: 200px;
+  height: 300px;
+}
+
+div.gallery-item {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+</style>
+</head>
+
+<body>
+<h1 style="color:white; text-align:center;">2000's songs</h1>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="fotos.html">Pictures</a></li>
+  <li><a href="magic.html">Magic</a></li>
+</ul>
+<div class="vinyl">
+  <img src="muziek/vynil.png" alt="vinyl">
+</div>
+<audio  id="music" src="muziek/stateside___Zara_larson.mp3"autoplay></audio>
+ 
+<P  class="one">The Best 2000's Album</p>
+  
+<div class="gallery">
+
+  <div class="gallery-item">
+     <a href="muziek/download (1).jpg">
+      <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
+    </a>
+  </div>
+  
+  <div class="gallery-item">
+    <a href="muziek/speaker.jpg">
+     <img src="muziek/Eminem-TheMarshallMathersLP-2LP.jpg" alt="Eminem" width="500" height="400">
+   </a>
+ </div>
+ 
+ <div class="gallery-item">
+  <a href="muziek/music_note.jpg">
+   <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
+ </a>
+</div>
+
+<div class="gallery-item">
+  <a href="muziek/guitar.jpg">
+   <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
+ </a>
+</div>
+</div>
+
+<div class="gallery">
+<P  class="two">The Best 2010's Album</p>
+  <div class="gallery-item">
+    <a href="muziek/caset.jpg">
+     <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
+   </a>
+  </div>
+  <div class="gallery-item">
+    <a href="muziek/speaker.jpg">
+     <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
+   </a>
+  </div>
+  <div class="gallery-item">
+    <a href="muziek/ster.jpg">
+     <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
+   </a>
+  </div>
+  <div class="gallery-item">
+    <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
+     <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
+   </a>
+  </div>
+</div>
+
+
+<div class="gallery">
+<P  class="one">The Best 2020's Album</p>
+    <!-- playlist Poker Face" - Lady -->
+    <div class="gallery-item">
+      <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
+       <img src="muziek/oopsididitagainalbum2.jpg" alt="Britney Spears" width="500" height="400">
+     </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
+       <img src="muziek/oops ididitagainalbum2.jpg" alt="Britney Spears" width="500" height="400">
+     </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
+       <img src="muziek/oops i did it againalbum2.jpg" alt="Britney Spears" width="500" height="400">
+     </a>
+    </div>
+    <div class="gallery-item">
+      <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
+       <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
+     </a>
+    </div>
+</div>
+  
+</body>
+</html>
+  
+  
+
+
+
+<!--<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+
+div:hover {
+  animation-play-state: paused;
+}
+
+@keyframes mymove {
+  from {left: 60px;}
+  to {left: 900px;}
+}
+</style>
+</head>
+<body>
+
+<h1>Set animation-play-state on Hover</h1>
+
+<p>Hover over the red box to stop the animation.</p>
+
+<div></div>
+
+</body>
+</html>-->

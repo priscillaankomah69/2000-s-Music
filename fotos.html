@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/thumbnails/008/550/648/small/vintage-78-rpm-record-transparent-png.png">
+<title>2000's Muziek</title>
+
+<style>
+
+/* PAGINA */
+body{
+    background:#0b0000;
+    font-family:fantasy;
+    color:white;
+    margin:0;
+}
+ul {
+  border: 3px solid rgb(1, 44, 4);
+  border-radius: 5px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 160px;
+  background-color: #0b521f;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: rgb(197, 190, 190);
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size:large;
+}
+li:hover {
+text-shadow: 0 0 10px #06cb38;
+}
+
+li a.active {
+  background-color: #1a181852;
+  color: rgb(0, 0, 0);
+
+}
+
+li a:hover:not(.active) {
+  background-color: #323131;
+  color: rgb(3, 3, 3);
+
+}
+
+h1{
+    text-align:center;
+    padding:20px;
+    text-shadow: 0 0 9px#1cff08;
+    text-indent: 130px;
+}
+
+
+/* SECTION TITEL */
+.decade-title{
+    text-align:center;
+    font-size:26px;
+    margin-top:40px;
+    text-shadow:0 0 8px #00ff15;
+}
+
+/* GRID */
+.artist-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    padding:30px;
+}
+
+/* CARD */
+.artist-card{
+    width:170px;
+    height:270px;
+    background:#013e0e;
+    border-radius:20px;
+    padding:8px;
+    box-sizing:border-box;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    transition:0.3s;
+    box-shadow:0 8px 18px rgba(0,0,0,0.35);
+}
+
+.artist-card.playing{
+    box-shadow:0 0 18px #1db954;
+    transform:translateY(-6px);
+}
+
+/* IMAGE */
+.artist-image{
+    position:relative;
+    width:100%;
+    height:185px;
+    overflow:hidden;
+    border-radius:14px;
+}
+
+.artist-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* PLAY BUTTON */
+.play-button{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.7);
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#1db954;
+    color:black;
+    font-size:22px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:0.3s;
+}
+
+.artist-card:hover .play-button{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+/* NAME */
+.artist-name{
+    margin-top:6px;
+    padding:6px;
+    font-size:13px;
+    text-align:center;
+    background-color: #0b7301;
+    border-radius:10px;
+    border:2px solid #013401;
+}
+
+/* PROGRESS */
+.progress{
+    height:4px;
+    margin-top:6px;
+    background:#1a5106;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    background:#1db954;
+}
+
+/* EQUALIZER */
+.equalizer{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    display:flex;
+    gap:3px;
+    opacity:0;
+}
+
+.equalizer span{
+    width:4px;
+    height:10px;
+    background:#1db954;
+    animation:bounce 0.6s infinite alternate;
+}
+
+.equalizer span:nth-child(2){animation-delay:0.2s;}
+.equalizer span:nth-child(3){animation-delay:0.4s;}
+
+.artist-card.playing .equalizer{
+    opacity:1;
+}
+
+@keyframes bounce{
+    from{height:6px;}
+    to{height:18px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Best Artists By The Decade</h1>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="fotos.html">Pictures</a></li>
+  <li><a href="magic.html">Magic</a></li>
+
+</ul>
+<div style="margin-left:130px;padding:1px 16px;height:1000px;">
+
+<div id="content"></div>
+
+<script>
+
+/* ========= ARTIESTEN ========= */
+/* decade = 2000 / 2010 / 2020 */
+
+const artists = [
+
+{ name:"Alicia Keys",
+  decade:2000,
+  image:"muziek/Alicia_Keys.jpg",
+  audio:"muziek/Alicia_Keys_Ampire_State.mp3"
+},
+
+{ name:"Britney Spears",
+  decade:2000,
+  image:"muziek/Britney_Spears.jpg",
+  audio:"muziek/gimme_britney_spears.mp3"
+},
+
+{ name:"Eminem",
+  decade:2000,
+  image:"muziek/Eminem.jpg",
+  audio:"muziek/Eminem__godzilla.mp3"
+},
+{ name:"Destiny Child",
+  decade:2000,
+  image:"muziek/Destiny_Child.jpg",
+  audio:"muziek/Destiny_Child_Say_my_name.mp3"
+},
+{ name:"Rihanna",
+  decade:2000,
+  image:"muziek/Rihanna.jpg",
+  audio:"muziek/Rihanna_Pon_De_replay.mp3"
+},
+
+
+{ name:"Bruno Mars",
+  decade:2010,
+  image:"muziek/Bruno_Mars.jpg",
+  audio:"muziek/Bruno_Mars_24KMagic.mp3"
+},
+{ name:"Justin Bieber",
+  decade:2010,
+  image:"muziek/Justin_Bieber.jpg",
+  audio:"muziek/Justin_Bieber_Baby.mp3"
+},
+{ name:"Ariana Grande",
+  decade:2010,
+  image:"muziek/Ariana_Grande.jpg",
+  audio:"muziek/Ariana_Grande_Postions.mp3"
+},
+{ name:"Katy Perry",
+  decade:2010,
+  image:"muziek/Katy_Perry.jpg",
+  audio:"muziek/Firework_katy_perry.mp3"
+},
+{ name:"Nicki Minaj",
+  decade:2010,
+  image:"muziek/Nicki_Minaj.jpg",
+  audio:"muziek/Nicki_Minaj_starship.mp3"
+},
+
+{ name:"Billie Eilish",
+  decade:2020,
+  image:"muziek/BillieEilish.jpg",
+  audio:"muziek/Billie_Eilish_birds_of_a_feather.mp3"
+},
+{ name:"kendrick Lamar",
+  decade:2020,
+  image:"muziek/Kendrick_Lamar.jpg",
+  audio:"muziek/Kendrick_Lamar_Not_Like_Us.mp3"
+},
+{ name:"Sabrina Carpenter",
+  decade:2020,
+  image:"muziek/sabrina_carpenter.jpg",
+  audio:"muziek/Sabrina_Carpenter_Espresso.mp3"
+},
+{ name:"Sza",
+  decade:2020,
+  image:"muziek/SZA.jpg",
+  audio:"muziek/Sza_Saturn.mp3"
+},
+{ name:"The Weeknd",
+  decade:2020,
+  image:"muziek/The_Weeknd.jpg",
+  audio:"muziek/Starboy_The_weeknd.mp3"
+},
+];
+
+
+/* ========= GROEPEREN PER DECADE ========= */
+
+const decades=[2000,2010,2020];
+const container=document.getElementById("content");
+
+decades.forEach(decade=>{
+
+const title=document.createElement("h2");
+title.className="decade-title";
+title.textContent=`Best ${decade}'s Artists`;
+container.appendChild(title);
+
+const grid=document.createElement("div");
+grid.className="artist-grid";
+container.appendChild(grid);
+
+artists
+.filter(a=>a.decade===decade)
+.forEach(artist=>{
+
+const card=document.createElement("div");
+card.className="artist-card";
+
+card.innerHTML=`
+<div class="artist-image">
+<img src="${artist.image}">
+<div class="play-button">▶</div>
+<div class="equalizer"><span></span><span></span><span></span></div>
+</div>
+
+<div class="artist-name">${artist.name}</div>
+
+<div class="progress">
+<div class="progress-fill"></div>
+</div>
+
+<audio>
+<source src="${artist.audio}" type="audio/mpeg">
+</audio>
+`;
+
+card.onclick=()=>toggleAudio(card);
+grid.appendChild(card);
+
+});
+
+});
+
+
+/* ========= AUDIO PLAYER ========= */
+
+function toggleAudio(card){
+
+const audio=card.querySelector("audio");
+const progress=card.querySelector(".progress-fill");
+
+document.querySelectorAll(".artist-card").forEach(c=>{
+const a=c.querySelector("audio");
+if(a!==audio){
+a.pause();
+a.currentTime=0;
+c.classList.remove("playing");
+c.querySelector(".progress-fill").style.width="0%";
+}
+});
+
+if(audio.paused){
+audio.play();
+card.classList.add("playing");
+}else{
+audio.pause();
+card.classList.remove("playing");
+}
+
+audio.ontimeupdate=()=>{
+const percent=(audio.currentTime/audio.duration)*100;
+progress.style.width=percent+"%";
+};
+
+audio.onended=()=>{
+card.classList.remove("playing");
+progress.style.width="0%";
+};
+
+}
+
+</script>
+
+</body>
+</html>

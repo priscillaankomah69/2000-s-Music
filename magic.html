@@ -1,15 +1,53 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>2000's Muziek</title>
-  <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/thumbnails/008/550/648/small/vintage-78-rpm-record-transparent-png.png">
-  <style>   
-  body {
-   background-color: rgb(15, 15, 15);
-   margin: 0;
-   padding: 0;
+<title>2000's Muziek</title>
+<link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/thumbnails/008/550/648/small/vintage-78-rpm-record-transparent-png.png">
+<style>
+body{
+ background-color: rgb(15, 15, 15);
+margin:0;
+padding: 0%;
+color: rgb(255, 255, 255);
+}
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-image: url('muziek/background.avif');
+  background-size: cover;
+  background-position: center;
 }
 
+.hero-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #1db954;
+  text-align: center;
+  padding: 10px;
+}
+
+.hero-header h1 {
+  font-size: 3em;
+  font-family: fantasy;
+  margin: 0;
+  text-shadow: 0 0 10px #1db954;
+}
+
+.hero-header p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  text-shadow: 0 0 8px #06cb38;
+}
 ul {
   border: 3px solid rgb(1, 49, 4);
   border-radius: 5px;
@@ -23,15 +61,31 @@ ul {
   overflow: auto;
 }
 
-li a {
-  display: block;
-  color: rgb(197, 190, 190);
-  padding: 8px 16px;
-  text-decoration: none;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size:large;
+li a:hover{
+background:#323131;
+text-shadow: #1db954;
+}
+h1,h2 {
+  text-align: center;
+  font-family:fantasy;
+  color: rgb(255, 255, 255);
+  font-size:xx-large;
+  
+
+} 
+h1,h2:hover{
+  text-shadow: 0 0 10px #00ff40;
 }
 
+li{ font-family: fantasy;
+  color: rgb(242, 232, 232);
+  font-size: larger;
+  text-indent: 30px;
+  text-shadow: #1db954;
+}
+li:hover {
+  text-shadow: 0 0 10px #00f93e;
+}
 li a.active {
   background-color: #1a181852;
   color: rgb(0, 0, 0);
@@ -41,197 +95,374 @@ li a:hover:not(.active) {
   background-color: #323131;
   color: rgb(3, 3, 3);
 }
-
-h1,h2 {
-  font-family:fantasy;
-  color: rgb(209, 194, 194);
-  font-size:xxx-large;
-
-} 
-p:hover,h1:hover{
-  text-shadow: 0 0 10px #06cb38;
-}
-h3.center {
-  text-align: center;
-  font-family:fantasy;
-  color: rgb(92, 1, 1);
-  font-size:xx-large;
-  text-shadow: 0 0 3px #090000;
-} 
-p{font-family: fantasy;
-  color: rgb(255, 247, 247);
-  font-size: larger;
-  text-align: center;
-
-}
-li{ font-family: fantasy;
-  color: rgb(82, 8, 8);
-  font-size: larger;
-  text-indent: 30px;
-}
-li:hover {
-  text-shadow: 0 0 10px #06cb38;
-}
-h1.center {
-  text-align: center;
-  color: rgb(218, 216, 216);
-
+.vinyl{
+position:absolute;
+width:160px;
+height:160px;
+animation:move 8s linear infinite;
 }
 
-body {
-  background-color: #111;
-  overflow: hidden;
+.vinyl img{
+width:100%;
+height:100%;
+animation:spin 4s linear infinite;
+}
+li a{
+display:block;
+color:white;
+padding:8px;
+text-decoration:none;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-shadow: #1db954;
+}
+form{
+margin-left:180px;
+padding:20px;
+color: #0b521f;
 }
 
-.vinyl {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  animation: move 6s linear infinite;
-}
+input{
 
-.vinyl img {
+box-sizing: border-box;
+border: 2px solid #03e850;
+border-radius: 4px;
+font-size: 16px;
+background-color: rgb(36, 36, 36);
+transition: width 0.4s ease-in-out;
+color: #ffffff;
+width: 130px;
+background-position: 10px 10px;  
+background-repeat: no-repeat;
+padding: 12px 20px 12px 40px;
+transition: width 0.4s ease-in-out;
+}
+input:focus {
   width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  animation: spin 4s linear infinite;
+}
+.section{
+margin-left:180px;
+padding:20px;
 }
 
+.row{
+display:flex;
+gap:100px;
+flex-wrap:wrap;
+}
+.album{
+width:150px;
+text-align:center;
+position:relative;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.album img{
+width:150px;
+height:150px;
+border-radius:50%;
+animation:spin 4s linear infinite;
+}
+
+.name{
+margin-top:8px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#1db954;
+width:50px;
+height:50px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+}
+
+.album:hover .play{
+opacity:1;
+}
+@keyframes spin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
 @keyframes move {
   from { left: 200px; }
-  to { left: 1500px; }
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-p.one {
- border: 2px solid rgb(6, 95, 7);
- border-radius: 5px;
- padding: 5px;
- text-indent: 50px;
- text-align: center;
-}
-p.two {
- border: 2px solid rgb(255, 255, 255);
- border-radius: 5px;
- padding: 5px;
- text-indent: 50px;
- text-align: center;
-}
-div.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-
-  width: 200px;
-  height: 300px;
-}
-
-div.gallery-item {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+  to { left: 1150px; }
 }
 </style>
 </head>
-
 <body>
-<h1 style="color:white; text-align:center;">2000's songs</h1>
+
+  <div class="vinyl">
+    <img src="muziek/guitar.png">
+    <audio  id="music" src="uziek/stateside___Zara_larson.mp3"autoplay></audio>
+    </div>
+    <header class="hero-header">
+        <div class="overlay">
+<h1>Best Music Albums</h1>
+        </div>
+    </header>
 <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="fotos.html">Pictures</a></li>
-  <li><a href="magic.html">Magic</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="fotos.html">Artists</a></li>
+<li><a href="magic.html">Albums</a></li>
 </ul>
-<div class="vinyl">
-  <img src="muziek/vynil.png" alt="vinyl">
+
 </div>
-<audio  id="music" src="muziek/stateside___Zara_larson.mp3"autoplay></audio>
- 
-<P  class="one">The Best 2000's Album</p>
+<form onsubmit="goSearch(event)">
+  <form>
+<input id="search"
+placeholder="2000 2010 2020 Eminem">
+
+</form>
+<script>
+
+function goSearch(e){
+
+e.preventDefault()
+
+let v =
+document.getElementById("search")
+.value.toLowerCase()
+
+
+if(v=="2000"){location.href="#y2000"}
+else if(v=="2010"){location.href="#y2010"}
+else if(v=="2020"){location.href="#y2020"}
+
+else if(v=="eminem"){location.href="#eminem"}
+else if(v=="linkin"){location.href="#linkin"}
+else if(v=="britney"){location.href="#britney"}
+
+else if(v=="ed"){location.href="#ed"}
+else if(v=="avicii"){location.href="#avicii"}
+else if(v=="dua"){location.href="#dua"}
+
+else if(v=="weeknd"){location.href="#weeknd"}
+else if(v=="billie"){location.href="#billie"}
+else if(v=="harry"){location.href="#harry"}
+
+}
+
+</script>
+
+<!-- 2000 -->
+
+<div id="y2000" class="section">
+
+<h2>2000s</h2>
+
+<div class="row">
+
+<div id="eminem" class="album">
+
+<a href="https://youtu.be/Mjcj4w3VnRI"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">Eminem</div>
+
+</div>
+
+<div id="linkin" class="album">
+
+<a href="https://youtu.be/A2Ojfv3ziXg?list=RDA2Ojfv3ziXg"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">Linkin Park</div>
+
+</div>
+
+<div id="britney" class="album">
+
+<a href="https://youtu.be/wsHbHR3Os6U?list=OLAK5uy_kRD2KDkCGV5MIuNoG9vri-E4qub2Xr2kw"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">Britney Spears</div>
+
+</div>
+
+<div id="Destiny" class="album">
+
+  <a href="https://youtu.be/sQgd6MccwZc?list=RDsQgd6MccwZc"
+  target="_blank">
   
-<div class="gallery">
+  <img src="muziek/vynil.png">
+  
+  <div class="play">▶</div>
+  
+  </a>
+  
+  <div class="name">Destiny Child</div>
+  
+  </div>
+</div>
+</div>
 
-  <div class="gallery-item">
-     <a href="muziek/download (1).jpg">
-      <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
-    </a>
+<!-- 2010 -->
+
+<div id="y2010" class="section">
+
+<h2>2010s</h2>
+
+<div class="row">
+
+<div id="ed" class="album">
+
+<a href="https://youtu.be/JGwWNGJdvx8?list=RDJGwWNGJdvx8"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">Ed Sheeran</div>
+
+</div>
+
+<div id="avicii" class="album">
+
+<a href="https://youtu.be/ssRPuC-w2M4?list=PLFZOMc7-nH5DBJ1M5LC01rCH_O-oEwyEc"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">Avicii</div>
+
+</div>
+
+<div id="dua" class="album">
+
+<a href="https://youtu.be/4-NkTMyVq2c?list=PLZI0UMvokhcYcyjvFbC0j0nNMSYpHfQq0"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">Dua Lipa</div>
+
+</div>
+
+<div id="justin" class="album">
+
+  <a href="https://youtu.be/IIY0yDePTpw?list=PLa-ifxCL1NVwCi2_ELqKPOr99Pkztldcx"
+  target="_blank">
+  
+  <img src="muziek/vynil.png">
+  
+  <div class="play">▶</div>
+  
+  </a>
+  
+  <div class="name">Justin Bieber</div>
+  
   </div>
   
-  <div class="gallery-item">
-    <a href="muziek/speaker.jpg">
-     <img src="muziek/Eminem-TheMarshallMathersLP-2LP.jpg" alt="Eminem" width="500" height="400">
-   </a>
- </div>
- 
- <div class="gallery-item">
-  <a href="muziek/music_note.jpg">
-   <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
- </a>
-</div>
-
-<div class="gallery-item">
-  <a href="muziek/guitar.jpg">
-   <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
- </a>
 </div>
 </div>
 
-<div class="gallery">
-<P  class="two">The Best 2010's Album</p>
-  <div class="gallery-item">
-    <a href="muziek/caset.jpg">
-     <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
-   </a>
-  </div>
-  <div class="gallery-item">
-    <a href="muziek/speaker.jpg">
-     <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
-   </a>
-  </div>
-  <div class="gallery-item">
-    <a href="muziek/ster.jpg">
-     <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
-   </a>
-  </div>
-  <div class="gallery-item">
-    <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
-     <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
-   </a>
-  </div>
+<!-- 2020 -->
+
+<div id="y2020" class="section">
+
+<h2>2020s</h2>
+
+<div class="row">
+
+<div id="weeknd" class="album">
+
+<a href="https://youtu.be/OPkZihHOfNI?list=PLS5_MK8e_MzSNmCQ3_AqbQL1JOM4Yy-_v"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">The Weeknd</div>
+
 </div>
 
+<div id="billie" class="album">
 
-<div class="gallery">
-<P  class="one">The Best 2020's Album</p>
-    <!-- playlist Poker Face" - Lady -->
-    <div class="gallery-item">
-      <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
-       <img src="muziek/oopsididitagainalbum2.jpg" alt="Britney Spears" width="500" height="400">
-     </a>
-    </div>
-    <div class="gallery-item">
-      <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
-       <img src="muziek/oops ididitagainalbum2.jpg" alt="Britney Spears" width="500" height="400">
-     </a>
-    </div>
-    <div class="gallery-item">
-      <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
-       <img src="muziek/oops i did it againalbum2.jpg" alt="Britney Spears" width="500" height="400">
-     </a>
-    </div>
-    <div class="gallery-item">
-      <a href="https://youtu.be/_qPLXWuELRA?list=RD_qPLXWuELRA">
-       <img src="muziek/oops i did it again album2.jpg" alt="Britney Spears" width="500" height="400">
-     </a>
-    </div>
+<a href="https://youtu.be/GgGarnL54Fw?list=PLSBWvYm8t6uYR5G4QrMEMnAGl2t0tYvUg"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">Billie Eilish</div>
+
 </div>
+
+<div id="harry" class="album">
+
+<a href="https://youtu.be/9K21imSXYqE?list=PLtZC5Fw8dg701BubpdkungqKDDeDfYJcT"
+target="_blank">
+
+<img src="muziek/vynil.png">
+
+<div class="play">▶</div>
+
+</a>
+
+<div class="name">Harry Styles</div>
+
+</div>
+<div id="sza" class="album">
+
+  <a href="https://youtu.be/WxflcXmtVTM?list=PLf7ytxKzTZxvXeAH2MPmZO54Ej47Ol0Nc"
+  target="_blank">
   
+  <img src="muziek/vynil.png">
+  
+  <div class="play">▶</div>
+  
+  </a>
+  
+  <div class="name">Sza</div>
+  
+  </div>
+
+</div>
+</div>
+
 </body>
 </html>
-  
-  
 
 
 

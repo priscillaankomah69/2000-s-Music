@@ -5,12 +5,48 @@
   <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/thumbnails/008/550/648/small/vintage-78-rpm-record-transparent-png.png">
   <style>   
   body {
-    background-image: url("muziek/Transparant Viny.png") none repeat;
     background-repeat: no-repeat;
    background-color: rgb(15, 15, 15);
    margin: 0;
    padding: 0;
 
+}
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url('muziek/vinylplaten.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 24, 13, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #1db954;
+  text-align: center;
+  padding: 10px;
+}
+
+.hero-header h1 {
+  font-size: 3em;
+  font-family: fantasy;
+  margin: 0;
+  text-shadow: 0 0 10px #1db954;
+}
+
+.hero-header p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  text-shadow: 0 0 8px #06cb38;
 }
 p.one {
  border: 2px solid rgb(6, 95, 7);
@@ -118,23 +154,28 @@ footer {
   background-color: #191a19;
   color: #cdebc7;
   text-align: center; 
-  padding: 20px;
+  padding: 10px;
   margin-top: auto;
       }
+
 </style>
 </head>
 <body>
  
 
-  <h1 id=2000 class="center">2000's songs</h1>
-  <h3 class="center">The best songs and artist from the 2000's till now.</h3>
+  <header class="hero-header">
+    <div class="overlay">
+      <h1 id=2000 class="center">2000's songs</h1>
+      <h3 class="center">The best songs and artist from the 2000's till now.</h3>
+    </div>
+  </header>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="#2000">° 2000's</a></li>  
     <li><a href="#2010">° 2010's</a></li>
     <li><a href="#2020">° 2020's</a></li>
-    <li><a href="fotos.html">Pictures</a></li>
-    <li><a href="magic.html">Magic</a></li>
+    <li><a href="fotos.html">Artists</a></li>
+    <li><a href="magic.html">Albums</a></li>
   </ul>
   <div style="margin-left:130px;padding:1px 16px;height:1000px;">
 
@@ -225,4 +266,5 @@ footer {
 </footer>
 </body>
 </html>
+
 
